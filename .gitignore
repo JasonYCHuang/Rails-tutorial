@@ -29,7 +29,7 @@ doc/
 .DS_Store
 .idea
 .secret
-local_env.yml
+/config/local_env.yml
 secrets.yml
 config/deploy.rb
 bfg.jar

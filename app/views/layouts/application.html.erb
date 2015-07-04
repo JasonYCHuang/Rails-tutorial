@@ -10,6 +10,11 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+
+    <div class="flash-overlap">
+      <%= render 'shared/flash/flash_msg' %>
+    </div>
+
     <div class="container">
       <%= yield %>
       <%= render 'layouts/footer' %>

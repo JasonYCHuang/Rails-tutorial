@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$nprogress-color: #FFFF99;
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+
+@import "font-awesome";
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -74,6 +80,26 @@ p {
     text-decoration: none;
   }
 }
+
+/* flash message */
+.flash-overlap {
+  width: 60%;
+  z-index: 299;
+  margin-top: 20px;
+  margin-left: 20%;
+  position: absolute;
+}
+
+.alert {
+  opacity: 0.9;
+}
+
+.alert-notification {
+    background-color:#CC99CC;
+    color:#990099;
+}
+
+
 
 /* footer */
 
