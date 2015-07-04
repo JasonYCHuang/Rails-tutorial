@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'welcomes#home'
-
-  get 'welcomes/help'
-
-  get 'welcomes/about'
+  root             'welcomes#home'
+  
+  get 'help'    => 'welcomes#help'
+  get 'about'   => 'welcomes#about'
+  get 'contact' => 'welcomes#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
