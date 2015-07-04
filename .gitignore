@@ -21,6 +21,10 @@ database.yml
 doc/
 *.swp
 *~
+
+# Ignore Spring files.
+/spring/*.pid
+
 .project
 .DS_Store
 .idea
