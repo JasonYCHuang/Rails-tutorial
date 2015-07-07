@@ -7,6 +7,12 @@ $nprogress-color: #FFFF99;
 
 @import "font-awesome";
 
+@brand-primary: #337ab7
+@brand-success: #5cb85c;
+@brand-info:    #5bc0de;
+@brand-warning: #f0ad4e;
+@brand-danger:  #d9534f;
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -127,18 +133,14 @@ aside {
 /* flash message */
 .flash-overlap {
   width: 60%;
-  z-index: 299;
+  z-index: 9999;
   margin-top: 20px;
   margin-left: 20%;
   position: absolute;
 }
 
-.alert {
-  opacity: 0.9;
-}
-
 .alert-notification {
-    background-color:#CC99CC;
+    background-color: #CC99CC;
     color:#990099;
 }
 
