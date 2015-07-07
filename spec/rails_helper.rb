@@ -53,4 +53,5 @@ RSpec.configure do |config|
   # includer helpers
   config.include Capybara::DSL
   config.include Features::SessionHelpers, type: :feature
+  config.include Devise::TestHelpers, type: :controller
 end
