@@ -1,8 +1,7 @@
-require 'rspec/rails'
 describe User do
 
   before { @user = User.new(name: "Example User", email: "user@example.com", 
-  							password: "foobarfoobar", password_confirmation: "foobarfoobar") }
+  							password: "foobarfoobar", password_confirmation: "foobarfoobar", remember_created_at: Time.now) }
 
   subject { @user }
 
@@ -10,6 +9,7 @@ describe User do
   it { should respond_to(:email) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_created_at) }
   it { should be_valid }
 
   describe "when name is not present" do
@@ -68,11 +68,11 @@ describe User do
   end
 
   describe "when password is not present" do
-	before do
-		@user = User.new(name: "Example User", email: "user@example.com",
-						 password: " ", password_confirmation: " ")
-	end
-	it { should_not be_valid }
+  	before do
+  		@user = User.new(name: "Example User", email: "user@example.com",
+  						 password: " ", password_confirmation: " ")
+  	end
+  	it { should_not be_valid }
   end
 
   describe "when password doesn't match confirmation" do
@@ -86,26 +86,21 @@ describe User do
   end
 
   describe "return value of authenticate method" do
-	before { @user.save }
-	let(:found_user) { User.find_by(email: @user.email) }
+  	before { @user.save }
+  	let(:found_user) { User.find_by(email: @user.email) }
 
-	describe "with valid password" do
-	  # TBD
-	end
+  	describe "with valid password" do
+  	  # TBD
+  	end
 
-	describe "with invalid password" do
-	  # TBD
-	end
+  	describe "with invalid password" do
+  	  # TBD
+    end
   end
 
-
-
-
-
-
-
-
-
-
+  describe "remember token" do
+    before { @user.save }
+    it { expect(@user.remember_created_at).not_to be_blank }
+  end
 
 end
