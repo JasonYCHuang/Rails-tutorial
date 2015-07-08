@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: a2fafcb2c78d817c5ad849d834ed259a1b43c269
+  specs:
+    jquery-datatables-rails (3.3.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -321,6 +331,7 @@ DEPENDENCIES
   font-awesome-rails
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
+  jquery-datatables-rails!
   jquery-rails (= 4.0.3)
   launchy
   mini_backtrace (= 0.1.3)

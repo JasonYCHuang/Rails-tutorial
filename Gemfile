@@ -33,10 +33,12 @@ gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',          '3.2.0.0'
 
-# Additional gems
+# ===== Additional gems =====
 gem 'devise'
 gem 'nprogress-rails'
 gem "font-awesome-rails"
+#table with sortable and searchable functions
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
