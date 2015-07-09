@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$nprogress-color: #FFFF99;
+$nprogress-color: #d9534f;
+$nprogress-height: 3px;
+$nprogress-zindex: 10100;
 @import 'nprogress';
 @import 'nprogress-bootstrap';
 
@@ -24,13 +26,12 @@ $gray-medium-light: #eaeaea;
 }
 
 /* universal */
-
 html {
   overflow-y: scroll;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 section {
@@ -77,18 +78,23 @@ p {
 
 
 /* header */
+.navbar-nav > li > a, .navbar-brand {
+    padding-bottom: 0px !important;
+    height: 40px;
+}
+.navbar {min-height:40px !important;}
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: #337ab7;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: #d9534f;
     text-decoration: none;
   }
 }
@@ -134,7 +140,7 @@ aside {
 .flash-overlap {
   width: 60%;
   z-index: 9999;
-  margin-top: 20px;
+  margin-top: -30px;
   margin-left: 20%;
   position: absolute;
 }
