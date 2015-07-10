@@ -34,5 +34,8 @@ secrets.yml
 config/deploy.rb
 bfg.jar
 
-#ignore output excel file.
+# ignore output excel file.
 output*.xlsx.alsx
+
+# Ignore uploaded test images.
+/public/uploads
