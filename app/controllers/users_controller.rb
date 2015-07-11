@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!
-	before_action :is_correct_user!, except: [:index, :destroy]		# TBD (will be updated if using pundit)
+	before_action :authenticate_user!	#, except: [:show]
+	#before_action :is_correct_user!, except: [:index, :show, :destroy, :following, :followers]		# TBD (will be updated if using pundit)
 	before_action :admin_user,     	 only: :destroy
 
 	def index
