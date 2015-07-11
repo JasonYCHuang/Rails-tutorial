@@ -80,7 +80,17 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'yourapp.heroku.com' }  #TBD
+  config.action_mailer.default_url_options = { :host => 'secret-spire-5730.heroku.com' }  #TBD
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    address: ENV["MAIL_ADDRESS"],
+    port: 587,
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
+  }
 end
