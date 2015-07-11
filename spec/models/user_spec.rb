@@ -13,6 +13,9 @@ describe User do
   it { should be_valid }
   it { should respond_to(:admin) }
   it { should respond_to(:microposts) }
+  it { should respond_to(:microposts) }
+  it { should respond_to(:feed) }
+  it { should respond_to(:feed) }
 
   describe "when name is not present" do
     before { @user.name = " " }
@@ -127,6 +130,67 @@ describe User do
         expect(Micropost.where(id: micropost.id)).to be_empty
       end
     end
+
+    describe "status" do
+      let(:unfollowed_post) do
+        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+      end
+      let(:followed_user) { FactoryGirl.create(:user) }
+
+      before do
+        @user.follow(followed_user)
+        3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
+      end
+
+      it "should include proper micropost" do
+        expect(subject.feed).to include(newer_micropost)
+        expect(subject.feed).to include(older_micropost)
+        expect(subject.feed).not_to include(unfollowed_post)
+=begin
+        its(:feed) do
+          followed_user.microposts.each do |micropost|
+            should include(micropost)
+          end
+        end
+=end
+      end
+
+    end
   end
+
+  it { should respond_to(:active_relationships) }
+  it { should respond_to(:following) }
+  it { should respond_to(:passive_relationships) }
+  it { should respond_to(:followers) }
+
+  it { should respond_to(:follow) }
+  it { should respond_to(:unfollow) }
+
+  describe "following" do
+    let(:other_user) { FactoryGirl.create(:user) }
+    before do
+      @user.save
+      @user.follow(other_user)
+    end
+
+    it { should be_following(other_user) }
+    specify { expect(subject.following).to include(other_user) }
+
+    describe "followed user" do
+      subject { other_user }
+      specify { expect(subject.followers).to include(@user) }
+    end
+
+    describe "and unfollowing" do
+      before { @user.unfollow(other_user) }
+
+      it { should_not be_following(other_user) }
+      specify { expect(subject.following).not_to include(other_user) }
+    end
+
+
+  end
+
+
 
 end

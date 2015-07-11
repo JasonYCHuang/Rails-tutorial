@@ -72,6 +72,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'cucumber-rails', '1.4.0', :require => false
 end
 
 group :production do

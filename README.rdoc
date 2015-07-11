@@ -1,6 +1,7 @@
 == README
 
 This website is built base on RUBY ON RAILS TUTORIAL (3RD ED.) by Michael Hartl.
+
 I adopt Rspec from RUBY ON RAILS TUTORIAL (2nd ED.) since Rspec is more popular in industry.
 
 Moreover, I modified parts of code base on following gems.
